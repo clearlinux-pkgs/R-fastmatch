@@ -4,7 +4,7 @@
 #
 Name     : R-fastmatch
 Version  : 1.1.0
-Release  : 3
+Release  : 4
 URL      : https://cran.r-project.org/src/contrib/fastmatch_1.1-0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fastmatch_1.1-0.tar.gz
 Summary  : Fast match() function
