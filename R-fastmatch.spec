@@ -4,14 +4,14 @@
 #
 Name     : R-fastmatch
 Version  : 1.1.0
-Release  : 10
+Release  : 11
 URL      : https://cran.r-project.org/src/contrib/fastmatch_1.1-0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fastmatch_1.1-0.tar.gz
 Summary  : Fast match() function
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-fastmatch-lib
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
 that require repeated look-ups. It is slightly faster that R's
@@ -35,11 +35,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1521167570
+export SOURCE_DATE_EPOCH=1537798002
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1521167570
+export SOURCE_DATE_EPOCH=1537798002
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
