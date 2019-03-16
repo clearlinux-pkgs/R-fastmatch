@@ -4,13 +4,13 @@
 #
 Name     : R-fastmatch
 Version  : 1.1.0
-Release  : 14
+Release  : 15
 URL      : https://cran.r-project.org/src/contrib/fastmatch_1.1-0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fastmatch_1.1-0.tar.gz
 Summary  : Fast match() function
 Group    : Development/Tools
 License  : GPL-2.0
-Requires: R-fastmatch-lib
+Requires: R-fastmatch-lib = %{version}-%{release}
 BuildRequires : buildreq-R
 
 %description
@@ -35,11 +35,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1537798002
+export SOURCE_DATE_EPOCH=1552758360
 
 %install
+export SOURCE_DATE_EPOCH=1552758360
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1537798002
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -74,8 +74,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library fastmatch|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  fastmatch || :
 
 
 %files
@@ -100,10 +99,8 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/fastmatch/help/paths.rds
 /usr/lib64/R/library/fastmatch/html/00Index.html
 /usr/lib64/R/library/fastmatch/html/R.css
-/usr/lib64/R/library/fastmatch/libs/symbols.rds
 
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/R/library/fastmatch/libs/fastmatch.so
 /usr/lib64/R/library/fastmatch/libs/fastmatch.so.avx2
-/usr/lib64/R/library/fastmatch/libs/fastmatch.so.avx512
